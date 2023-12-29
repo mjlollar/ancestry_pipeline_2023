@@ -2,4 +2,4 @@
 
 Command to get Sync file from mpileup:
 
-java -ea -Xmx7g -jar <path>/mpileup2sync.jar --input <chr>.mpileup --output <chr>.sync --fastq-type sanger --min-qual 20 --threads 8
+java -ea -Xmx7g -jar "your path"/mpileup2sync.jar --input "chrom".mpileup --output "chrom".sync --fastq-type sanger --min-qual 20 --threads 8
