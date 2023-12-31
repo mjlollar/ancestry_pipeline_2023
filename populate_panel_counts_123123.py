@@ -40,9 +40,7 @@ def allele_match(row):
 ### Generate new columns
 df_combined[["A1f", "A2f"]] = df_combined.apply(lambda row: allele_match(row), axis='columns', result_type='expand')
 
-### Drop rows with no allele counts in input sync (no information rows) and remove intermediate columns for output
-index_group = df_combined[(df_combined['A1f'] == 0) & (df_combined['A2f'] == 0)].index
-df_combined.drop(index_group, inplace=True)
+### Remove intermediate columns for output
 df_combined.drop(df_combined.columns[[9,10,11,12]], axis=1, inplace=True)
 
 ### Print panel output
