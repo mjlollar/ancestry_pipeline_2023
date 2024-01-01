@@ -1,37 +1,6 @@
 #### MJL 12/31/23
 #### ANCESTRY PIPELINE POST BWA,INDEX,REALIGN
 
-# A series of folders should exist to receive the posterior outputs, this block will check whether they exist and will create them if needed.
-if [ ! -d posteriors/ ]
-then
-	mkdir posteriors
-fi
-
-if [ ! -d posteriors/X/ ]
-then
-	mkdir posteriors/X
-fi
-
-if [ ! -d posteriors/2L/ ]
-then
-	mkdir posteriors/2L
-fi
-
-if [ ! -d posteriors/2R/ ]
-then
-	mkdir posteriors/2R
-fi
-
-if [ ! -d posteriors/3L/ ]
-then
-	mkdir posteriors/3L
-fi
-
-if [ ! -d posteriors/3R/ ]
-then
-	mkdir posteriors/3R
-fi
-
 # list the RIL bam files
 ls *.bam > RIL_list.txt # list all the bam files (all the bam files should be from the RILs to be analized)
 sed -i 's/_realign.bam//' RIL_list.txt # edit the file to use it as input to the for loop below
