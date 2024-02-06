@@ -17,8 +17,8 @@ java -Xmx5g -jar picard.jar BuildBamIndex -I ${line}_align_md.bam
 
 #### conda activate tiagojav8 for next set of commands ####
 ### Realign around Indels
-java -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -I F1_align_md.bam -o F1.intervals -R DmelRef.fasta
-java -jar GenomeAnalysisTK.jar -T IndelRealigner -I F1_align_md.bam -targetIntervals F1.intervals -R DmelRef.fasta -o F1_realign.bam 
+java -jar GenomeAnalysisTK.jar -T RealignerTargetCreator -I ${line}_align_md.bam -o ${line}.intervals -R DmelRef.fasta
+java -jar GenomeAnalysisTK.jar -T IndelRealigner -I ${line}_align_md.bam -targetIntervals ${line}.intervals -R DmelRef.fasta -o ${line}_realign.bam 
 
 ### List the bam files
 ls *.bam > bam_list.txt
