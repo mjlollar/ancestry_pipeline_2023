@@ -1,7 +1,5 @@
 #### MJL last update 01/29/23
 
-
-
 ##Preliminary alignment commands (run on chtc)
 ### Index reference genome
 bwa index dmel-r5.57.fasta #use relevant flags if using ref genome >2GB
