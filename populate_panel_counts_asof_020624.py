@@ -1,12 +1,9 @@
 #### updated: MJL 01/29/24
-#### SCRIPT TO ADJUST PANEL FILES WITH ADDED OFFSPRING COUNT COLUMNS
-#### THIS SCRIPT IS A VARIANT OF "populate_snp_matrix.pl"
-#### USES TOTAL COUNTS IN ADDED COLUMNS INSTEAD OF 1/0 PRESENCE/ABSENCE
+#### SCRIPT TO ADD OFFSPRING COUNT COLUMNS TO PANEL FILES FOR AHMM INPUT
 
 import argparse
 import numpy as np
 import pandas as pd
-import operator
 
 parser = argparse.ArgumentParser(description="new populate snp matrix script")
 parser.add_argument('--p', help='Input Panel File', required=True, type=str)
