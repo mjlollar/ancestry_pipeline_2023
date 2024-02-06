@@ -12,8 +12,8 @@ parser = argparse.ArgumentParser(description="new populate snp matrix script")
 parser.add_argument('--p', help='Input Panel File', required=True, type=str)
 parser.add_argument('--s', help='Input Sync File', required=True, type=str)
 parser.add_argument('--c', help='Chromosome Arm', required=True, type=str)
-parser.add_argument('--rc', help='Minimum Read Count at sites used in ahmm_in.panel', required=True, type=int)
-parser.add_argument('--off', help='Offset value of sync position coordinates for 0/1 index checking (default -1 as sync usually 1 indexed)', required=True, default=-1, type=int)
+parser.add_argument('--rc', help='Minimum read Count at panel sites', required=False, default=0, type=int)
+parser.add_argument('--off', help='Offset value of sync position coordinates for 0/1 index checking (default -1 as sync usually 1 indexed and panels are 0)', required=False, default=-1, type=int)
 args = parser.parse_args()
 
 print("Generating ahmm panel inputs with " + str(args.rc) + " read threshold")
@@ -29,8 +29,9 @@ df_sync = pd.read_csv(args.s, sep='\t', header=None)
 df_panel.columns = ['chr', 'pos', 'A1', 'A2', 'P1A1', 'P1A2', 'P2A1', 'P2A2', 'recomb']
 df_sync.columns = ['chr', 'pos', 'refA', 'count']
 
-df_panel['pos'] = df_panel['pos'] + args.off #set position by offset
-#df_sync['pos'] = df_sync['pos'] + args.off #set position by offset
+#Pick between these two
+#df_panel['pos'] = df_panel['pos'] + args.off #set position by offset
+df_sync['pos'] = df_sync['pos'] + args.off #set position by offset
 
 ### Merge Sync file and Panel files
 df_combined = pd.merge(df_panel, df_sync[['pos','count']], on='pos')
