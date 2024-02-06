@@ -46,26 +46,26 @@ do
 	done
 
 	### Generate ahmm_input panels from population panel and sync files
-  ### Use rec_map.py script to adjust recombination rates if desired
-  ### conda activate sklearnpy (needs pandas)
+  	### Use rec_map.py script to adjust recombination rates if desired
+  	### conda activate sklearnpy (needs pandas)
 	## X
-	python3 populate_panel_counts_recomb_filer_012924.py --p X.panel --s ${BAM}.4.sync --c X --rc 0 --off -1
+	python3 populate_panel_counts_asof_020624.py --p X.panel --s ${BAM}.4.sync --c X --rc 0 --off -1
 	#python3 rec_map.py X_recomb_0.1gen.csv X.ahmm_in.panel
 	#mv X.ahmm_in.panel2 X.ahmm_in.panel
 	## 2L
-	python3 populate_panel_counts_recomb_filer_012924.py --p 2L.panel --s ${BAM}.3.sync --c 2L --rc 0 --off -1
+	python3 populate_panel_counts_asof_020624.py --p 2L.panel --s ${BAM}.3.sync --c 2L --rc 0 --off -1
 	#python3 rec_map.py 2L_recomb_0.1gen.csv 2L.ahmm_in.panel
 	#mv 2L.ahmm_in.panel2 2L.ahmm_in.panel
 	## 2R
-	python3 populate_panel_counts_recomb_filer_012924.py --p 2R.panel --s ${BAM}.7.sync --c 2R --rc 0 --off -1
+	python3 populate_panel_counts_asof_020624.py --p 2R.panel --s ${BAM}.7.sync --c 2R --rc 0 --off -1
 	#python3 rec_map.py 2R_recomb_0.1gen.csv 2R.ahmm_in.panel
 	#mv 2R.ahmm_in.panel2 2R.ahmm_in.panel
 	## 3L
-	python3 populate_panel_counts_recomb_filer_012924.py --p 3L.panel --s ${BAM}.5.sync --c 3L --rc 0 --off -1
+	python3 populate_panel_counts_asof_020624.py --p 3L.panel --s ${BAM}.5.sync --c 3L --rc 0 --off -1
 	#python3 rec_map.py 3L_recomb_0.1gen.csv 3L.ahmm_in.panel
 	#mv 3L.ahmm_in.panel2 3L.ahmm_in.panel
 	## 3R
-	python3 populate_panel_counts_recomb_filer_012924.py --p 3R.panel --s ${BAM}.8.sync --c 3R --rc 0 --off -1
+	python3 populate_panel_counts_asof_020624.py --p 3R.panel --s ${BAM}.8.sync --c 3R --rc 0 --off -1
 	#python3 rec_map.py 3R_recomb_0.1gen.csv 3R.ahmm_in.panel
 	#mv 3R.ahmm_in.panel2 3R.ahmm_in.panel
 
