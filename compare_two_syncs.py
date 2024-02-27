@@ -1,4 +1,4 @@
-#### updated: MJL 01/29/24
+#### updated: MJL 02/25/24
 #### Hey, do you need a script that uses really slow apply methods to loop through sync files and tell you % matches, mismatches, and minor allele matches?
 #### Well do I have something for you
 
